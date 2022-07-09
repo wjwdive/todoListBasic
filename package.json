@@ -1,5 +1,5 @@
 {
-  "name": "demo3",
+  "name": "todoList",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "less-loader": "^7.3.0",
+    "nanoid": "^4.0.0",
+    "sass-loader": "^13.0.2",
     "vue": "^2.6.11"
   },
   "devDependencies": {
