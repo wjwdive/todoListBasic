@@ -26,7 +26,7 @@ import TodoHeader from './components/TodoHeader.vue'
 import TodoFooter from './components/TodoFooter.vue'
 import TodoList from './components/TodoList.vue'
 
-import { nanoid } from 'nanoid'
+// import { nanoid } from 'nanoid'
 
 export default {
   name: 'App',
@@ -38,11 +38,13 @@ export default {
   data() {
     return {
       //todos 放在这里是为了 兄弟组件之间传递数据
-      todos: [
-        { id: nanoid(), title: '吃饭', done: true },
-        { id: nanoid(), title: '睡觉', done: false },
-        { id: nanoid(), title: '打豆豆', done: false }
-      ],
+      // todos: [
+      //   { id: nanoid(), title: '吃饭', done: true },
+      //   { id: nanoid(), title: '睡觉', done: false },
+      //   { id: nanoid(), title: '打豆豆', done: false }
+      // ],
+      //从localStorage中读取记录，没有数据用空数组，不用空数组会报错，因为读取不到会返回null,JSON.parse null会报错
+      todos: JSON.parse(localStorage.getItem('todos')) || []
     }
   },
   methods: {
@@ -75,6 +77,14 @@ export default {
       this.todos = this.todos.filter((todo) => {
         return !todo.done
       })
+    }
+  },
+  watch: {
+    todos: {
+      deep: true,//开启深度监视，
+      handler(value) {
+        localStorage.setItem('todos', JSON.stringify(value))
+      }
     }
   }
   }

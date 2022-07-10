@@ -34,6 +34,7 @@ export default {
     /* display: flex; */
     width: 300px;
     height: 200px;
+    padding-left: 2px;
     background: lightblue;
     justify-content: center;
     align-items: left;

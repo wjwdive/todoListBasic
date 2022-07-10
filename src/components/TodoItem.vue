@@ -1,6 +1,6 @@
 <template>
     <li>
-        <label>
+        <label class="li-left">
             <input type="checkbox" :checked='todo.done' @change="toggleCheck(todo.id)" />
             <span>{{ todo.title }}</span>
         </label>
@@ -44,18 +44,33 @@ export default {
 
 <style scoped>
 li {
-    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 35px;
+    /* align-content: center; */
+    align-items: center;
+    margin-top: auto;
 }
+/* li :left {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    height: 35px;
+    align-content: center;
+} */
 li button {
+    /* display: flex;
+    flex-direction: row;
+    justify-content: right; */
     float: right;
     display: none;
-    margin-top: 3px;
 }
 li:hover {
     background: skyblue;
 }
 
 li:hover button {
-    display: block;
+    display: inline-block;
 }
 </style>

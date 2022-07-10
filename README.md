@@ -76,3 +76,6 @@ npm i less-loder@7
 
 3.使用v-model 要切记：v-model 绑定的值不能是props传过来的值，因为props是不可以修改的
 4.props传过来的若是对象类型，修改对象中的属性时，Vue不会报错，但是不推荐这样做
+
+## 事件
+JS内置事件是给，html标签用的。
